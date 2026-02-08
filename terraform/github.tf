@@ -18,5 +18,10 @@ resource "aws_codebuild_webhook" "app" {
       type    = "HEAD_REF"
       pattern = "refs/heads/master"
     }
+
+    filter {
+      type = "FILE_PATH"
+      pattern = "^app/.*\\.(py|toml|lock|json|yml|yaml|sh)$|^buildspec\\.yml$"
+    }
   }
 }
