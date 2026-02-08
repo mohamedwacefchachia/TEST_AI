@@ -86,10 +86,15 @@ resource "aws_iam_role_policy" "codebuild_policy" {
     Version = "2012-10-17"
     Statement = [
       {
+        # 1. CETTE PARTIE DOIT ÊTRE SUR "*"
+        Effect   = "Allow"
+        Action   = ["ecr:GetAuthorizationToken"]
+        Resource = "*"
+      },
+      {
         #ecr
         Effect = "Allow"
         Action = [
-          "ecr:GetAuthorizationToken",
           "ecr:BatchCheckLayerAvailability",
           "ecr:GetDownloadUrlForLayer",
           "ecr:BatchGetImage",
