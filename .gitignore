@@ -1,0 +1,41 @@
+# Python & Environnement
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+.python-version
+
+# Build & Distribution
+build/
+dist/
+wheels/
+*.egg-info/
+
+# IAC
+**/.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfstate.lock.info
+.terraform.lock.hcl
+*.tfvars
+*.tfvars.json
+
+# Cache
+.pytest_cache/
+.ruff_cache/
+
+#Baml
+baml_client/
+
+#Secrets
+.env
+
+# OS & IDE
+.DS_Store
+.vscode/
+.idea/
+Thumbs.db
+
+#My files
+/*.txt
+/Test_Technique.md

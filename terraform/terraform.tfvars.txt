@@ -1,0 +1,15 @@
+common_tags = {
+      Project   = "Wacef-Test"
+      Owner     = "Wacef"
+}
+
+environment = {ENV = "dev"}
+
+#Langfuse
+langfuse_public_key=""
+langfuse_secret_key=""
+langfuse_base_url=""
+
+#Github
+github_repo_url = ""
+github_token = ""
