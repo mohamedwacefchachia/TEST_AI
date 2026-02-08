@@ -52,7 +52,7 @@ resource "aws_iam_policy" "app_permissions" {
         Action = [
           "secretsmanager:GetSecretValue"
         ]
-        Resource = [aws_secretsmanager_secret.app-secrets.arn]
+        Resource = [aws_secretsmanager_secret.app_secrets.arn]
       }
     ]
   })
@@ -131,7 +131,7 @@ resource "aws_iam_role_policy" "execution_secrets_policy" {
     Statement = [{
       Effect   = "Allow"
       Action   = ["secretsmanager:GetSecretValue"]
-      Resource = [aws_secretsmanager_secret.app-secrets.arn]
+      Resource = [aws_secretsmanager_secret.app_secrets.arn]
     }]
   })
 }

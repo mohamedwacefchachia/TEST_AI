@@ -92,7 +92,7 @@ resource "aws_ecs_service" "main" {
   }
   depends_on = [
     terraform_data.bootstrap_docker_image,
-    aws_lb_listener.http
+    aws_lb_listener.front_end
   ]
 
   lifecycle {
