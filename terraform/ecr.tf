@@ -21,8 +21,12 @@ resource "terraform_data" "bootstrap_docker_image" {
     working_dir = "${path.module}/../app"
     interpreter = ["PowerShell", "-Command"]
     command     = <<EOF
-      $region = "${data.aws_region.current.name}"
+      $region = "${var.aws_region}"
       $repository_url = "${aws_ecr_repository.app.repository_url}"
+
+      $token = aws ecr get-login-password --region $region
+      docker login -u AWS -p $token $repository_url
+      
       aws ecr get-login-password --region $region | docker login --username AWS --password-stdin $repository_url
       docker build -t "$($repository_url):latest" .
       docker push "$($repository_url):latest"

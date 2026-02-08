@@ -16,7 +16,7 @@ resource "aws_codebuild_webhook" "app" {
     }
     filter {
       type    = "HEAD_REF"
-      pattern = "refs/heads/main"
+      pattern = "refs/heads/master"
     }
   }
 }
