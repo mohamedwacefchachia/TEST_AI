@@ -18,6 +18,10 @@ def welcome_msg():
         "status": "online",
         "message": f"Welcome to the {app.title} API documentation!",
     }
+    
+@app.get("/test_deployment")
+def welcome_msg():
+    return "Successful deployment"
 
 
 if __name__ == "__main__":
