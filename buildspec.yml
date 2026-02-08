@@ -5,6 +5,7 @@ phases:
     commands:
       - echo Logging in to Amazon ECR...
       - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $REPOSITORY_URI
+      - cd app
   build:
     commands:
       - echo Build started on `date`
